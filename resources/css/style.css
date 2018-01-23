@@ -1,0 +1,37 @@
+html {
+  font-family: Helvetica;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+body {
+  width: 960px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 1rem;
+  color: White;
+  background-color: Cadetblue;
+  padding: 1rem 1rem 1rem 2rem;
+  margin-top: 1rem;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-left img {
+  height: 1.5rem;
+  padding-right: 1rem;
+}
+
+.header-right a {
+  padding: 1rem;
+  text-decoration: none;
+  color: White;
+}
