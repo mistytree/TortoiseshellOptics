@@ -4,17 +4,21 @@ html {
   line-height: 1.4;
 }
 
-body {
+.header,
+.container,
+.footer {
+  display: block;            /* First 3 lines of code will center the block */
+  margin-left: auto;
+  margin-right: auto;
 
+  width: 960px;
 }
 
 /* HEADER Section */
 
 .header {
   position: absolute;
-  width: 960px;
   top: 1rem;
-  margin: auto;
 
   display: flex;
   justify-content: space-between;
@@ -64,5 +68,112 @@ body {
   color: Black;
   background-color: White;
   padding: 1.5rem 5rem;
-  border: 1px solid black;
+  border: 1px solid black; /* DELETE LATER!!! */
+}
+
+/* BODY SECTION */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container.upper-part,
+.container.bottom-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid black; /* DELETE LATER!!! */
+}
+
+.container.upper-part {
+  margin-top: 3rem;
+  height: 8rem;
+}
+
+.upper-part.left img {
+  width: 3.5rem;
+  height: auto;
+}
+
+.upper-part.center img,
+.upper-part.right img {
+  width: 5rem;
+  height: auto;
+}
+
+.upper-part.left,
+.upper-part.center,
+.upper-part.right {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  width: 6rem;  /* This one just guessed, not in redline mock-up; looks better with */
+}
+
+.upper-part.center {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.text-left,
+.text-center,
+.text-right {
+  display: flex;
+  justify-content: center;
+
+  text-align: center;
+  width: 5rem;
+}
+
+/* BODY Section - Bottom Part */
+
+.container.bottom-part {
+  display: flex;
+  align-items: flex-start;
+}
+
+.green-container {
+  font-weight: bold;
+  font-size: 1rem;
+  color: White;
+  text-align: left;
+
+  background-color: Cadetblue;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  width: 10rem;
+  padding-left: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+}
+
+.bottom-part.left,
+.bottom-part.right {
+  line-height: 1.4rem;
+  width: 35%;
+  margin-top: 1rem;
+}
+
+.bottom-part.center {    /* To create 5% width gap between right and left container */
+  width: 5%;
+}
+
+/* FOOTER Section */
+
+.footer {
+  margin-top: 5rem;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  background-color: azure;
+}
+
+.footer img {
+  height: 1.5rem;
+  padding: 4rem 1rem 4rem 4rem;
 }
