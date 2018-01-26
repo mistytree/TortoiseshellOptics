@@ -4,7 +4,7 @@ html {
   line-height: 1.4;
 }
 
-.header,
+.banner-header,
 .container,
 .footer {
   display: block;            /* First 3 lines of code will center the block */
@@ -14,11 +14,27 @@ html {
   width: 960px;
 }
 
-/* HEADER Section */
+/* BANNER Section */
 
-.header {
-  position: absolute;
+.banner-container {
+  /* To display .banner-header and .banner-white-box not on the same line */
+  display: block;
+}
+
+/* Don't load image through HTML because it will not be placed behind green nav-bar */
+/* but rather under as elements flow naturally! */
+header {
+  background-image: url("../img/main-banner.png");
+  background-size: cover;
+  height: 30rem;
+  width: 100%;
+}
+
+/* HEADER Sub-Section */
+
+.banner-header {
   top: 1rem;
+  position: relative;  /* Position relative to .banner-container */
 
   display: flex;
   justify-content: space-between;
@@ -46,22 +62,14 @@ html {
   color: White;
 }
 
-/* BANNER Section */
+/* WHITE BOX Sub-Section */
 
-.banner {
-  /*display: flex;*/
+.banner-white-box {
+  position: relative;  /* Position relative to .banner-container */
+  top: 11rem;          /* Relative to .banner-header */
+  margin-left: 45%;
+  max-width: fit-content;  /* Good trick to set width of container only to content size */
 
-}
-
-.banner img {
-  height: 30rem;
-  width: 100%;
-  /*background-size: cover;*/
-}
-
-.banner.white-box {
-  top: 14rem;
-  position: absolute;
   font-weight: bold;
   font-size: 2rem;
   line-height: 1.2;
@@ -72,11 +80,6 @@ html {
 }
 
 /* BODY SECTION */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 .container.upper-part,
 .container.bottom-part {
@@ -107,9 +110,9 @@ html {
 .upper-part.right {
   display: flex;
   flex-flow: column;
+  justify-content: space-between;
   align-items: center;
-
-  width: 6rem;  /* This one just guessed, not in redline mock-up; looks better with */
+  border: 1px solid black; /* DELETE LATER!!! */
 }
 
 .upper-part.center {
@@ -122,9 +125,8 @@ html {
 .text-right {
   display: flex;
   justify-content: center;
-
   text-align: center;
-  width: 5rem;
+  width: 5rem;  /* To force text to wrap in two lines */
 }
 
 /* BODY Section - Bottom Part */
