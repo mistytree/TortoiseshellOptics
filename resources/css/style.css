@@ -4,7 +4,7 @@ html {
   line-height: 1.4;
 }
 
-.banner-header,
+.banner-white-box,
 .container,
 .footer {
   display: block;            /* First 3 lines of code will center the block */
@@ -26,6 +26,7 @@ html {
 header {
   background-image: url("../img/main-banner.png");
   background-size: cover;
+  background-position: 20%;  /* In order to position man more to the left */
   height: 30rem;
   width: 100%;
 }
@@ -35,6 +36,10 @@ header {
 .banner-header {
   top: 1rem;
   position: relative;  /* Position relative to .banner-container */
+
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 960px;    /* Has to be set to max-width not just width in order to shrink */
 
   display: flex;
   justify-content: space-between;
@@ -62,12 +67,16 @@ header {
   color: White;
 }
 
+.mobile-nav {                 /* Turns off navigation menu for mobile devices */
+  display: none;
+}
+
 /* WHITE BOX Sub-Section */
 
 .banner-white-box {
   position: relative;  /* Position relative to .banner-container */
   top: 11rem;          /* Relative to .banner-header */
-  margin-left: 45%;
+  right: -13.2rem;     /* Setting white box 2rem off right side of .banner-head */
   max-width: fit-content;  /* Good trick to set width of container only to content size */
 
   font-weight: bold;
@@ -76,7 +85,6 @@ header {
   color: Black;
   background-color: White;
   padding: 1.5rem 5rem;
-  border: 1px solid black; /* DELETE LATER!!! */
 }
 
 /* BODY SECTION */
@@ -86,7 +94,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 1px solid black; /* DELETE LATER!!! */
+  /* border: 1px solid black; */
 }
 
 .container.upper-part {
@@ -112,7 +120,6 @@ header {
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid black; /* DELETE LATER!!! */
 }
 
 .upper-part.center {
@@ -178,4 +185,112 @@ header {
 .footer img {
   height: 1.5rem;
   padding: 4rem 1rem 4rem 4rem;
+}
+
+/* RESPONSIVE Design TABLET (768px) */
+
+@media only screen and (max-width: 768px) and (orientation: portrait){
+  .container,
+  .footer {
+    width: 100%;
+  }
+
+  header {
+    height: 22rem;
+  }
+
+  .mobile-nav {                 /* Turns off navigation menu for mobile devices */
+    display: none;
+  }
+
+  .banner-header {
+    top: 0;
+    width: auto; /* To allow header shrink to proper width and narrow gap between right and left side */
+    white-space: nowrap;
+  }
+
+  .banner-white-box {
+    top: 5rem;                /* Relative to .banner-header */
+    margin-right: 15.2rem;    /* 2rem from right side (because -13.2rem offset set earlier) */
+    white-space: nowrap;
+
+    font-size: 1.33rem;
+    padding: 0.75rem 4rem;
+  }
+
+  .bottom-part.center {    /* To create 10% width gap between right and left container */
+    width: 10%;
+  }
+
+}
+
+/* RESPONSIVE Design MOBILE (480px) */
+
+@media only screen and (max-width: 480px) and (orientation: portrait){
+  .header-right {              /* Turns off navigation menu for desktop & tablet */
+    display: none;
+  }
+
+  .mobile-nav {
+    padding: 1rem;
+    text-decoration: none;
+    color: White;
+  }
+
+  header {
+    height: 17rem;
+  }
+
+  .banner-white-box {
+    top: 9rem;                /* Relative to .banner-header */
+    margin: 0;
+
+    font-size: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .container.upper-part,
+  .container.bottom-part {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .container.upper-part {
+    margin-top: 3.77rem;
+    margin-bottom: 3.77rem;
+    height: auto;
+  }
+
+  .upper-part.center {
+    margin-top: 1.54rem;
+    margin-bottom: 1.54rem;
+  }
+
+  .text-left,
+  .text-center,
+  .text-right {
+    font-size: 0.77rem;
+  }
+
+  .green-container {
+    width: 100%;
+    text-align: center;
+  }
+
+  .bottom-part.left {
+    width: 100%;
+  }
+
+  .bottom-part.right {
+    width: 100%;
+    margin-top: 0rem;
+  }
+
+  .bottom-part.text {
+    font-size: 0.77rem;
+    margin-left: 0.25rem;
+  }
+
 }
